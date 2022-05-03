@@ -1,3 +1,3 @@
-FROM nginx:1.21-alpine
+FROM nginx:latest
 
 ADD index.html /usr/share/nginx/html
