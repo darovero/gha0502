@@ -1,4 +1,4 @@
-name: Container test
+name: Actions Workflow
 
 on: [push]
 
@@ -6,8 +6,24 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code 
-        uses: actions/checkout@v3
-      - name: Login to docker hub
-      - name: build and push to docker
-        uses: docker/login-action@v1.14.1
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
+      - name: Checkout
+        uses: actions/checkout@v3.0.2
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
+      - name: Simple JS Actions
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: David
+      - name: Log Greeting Time
+        run: echo "${{steps.greet.outputs.time}}"
