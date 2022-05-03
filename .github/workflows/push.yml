@@ -8,11 +8,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.2
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v3
-        with:
-          images: darovero/ghatest
       - name: Login Docker
         uses: docker/login-action@v1.14.1        
         with:
@@ -23,5 +18,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: darovero/ghatest:latest, darovero/ghatest:${{ github.run_number }}
