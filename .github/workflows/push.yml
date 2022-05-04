@@ -1,10 +1,10 @@
-name: Actions Workflow
+name: Actions Workflow0
 
 on: [push]
 
 jobs:
   run-github-actions:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.2
