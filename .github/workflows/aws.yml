@@ -53,6 +53,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1.4.9
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: nginx01
+        service: demo-test
         cluster: cltpodc
         wait-for-service-stability: true
