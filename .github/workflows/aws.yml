@@ -54,5 +54,5 @@ jobs:
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service: my-service
-        cluster: my-cluster
+        cluster: cltpodc
         wait-for-service-stability: true
