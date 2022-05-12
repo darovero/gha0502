@@ -1,4 +1,4 @@
-name: Pipeline BackEnd - CI - ECR - ECS
+name: Pipeline BackEnd / Docker - ECR - ECS
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    name: CI
+    name: CI/CD
     runs-on: ubuntu-latest
 
     steps:
